@@ -371,7 +371,7 @@ public class MultitableGuiModel extends XulEventSourceAdapter {
   Outter:
     for ( JoinTableModel table : availableTables ) {
       for ( LogicalTable tbl : domain.getLogicalModels().get( 0 ).getLogicalTables() ) {
-        if ( tbl.getPhysicalTable().getProperty( "target_table" ).equals( table.getName() ) ) {
+        if ( ( (String) tbl.getPhysicalTable().getProperty( "target_table" ).getValue() ).equals( table.getName() ) ) {
           for ( LogicalColumn col : tbl.getLogicalColumns() ) {
             JoinFieldModel field = new JoinFieldModel();
             field.setName( col.getName( locale ) );
